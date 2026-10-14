@@ -153,3 +153,12 @@ docker buildx build --platform linux/amd64 -t myorg/worker:latest ./worker
 This ensures the image is built for the desired platform.
 
 ---
+
+
+
+instance_b_private_ip = "10.0.5.244"
+instance_c_private_ip = "10.0.5.146"
+private_subnet_id = "subnet-073b5457fcca7cebb"
+public_ip = "54.236.240.238"
+public_subnet_id = "subnet-06553008e242d20c1"
+vpc_id = "vpc-05ce89ae3dac3115c"
