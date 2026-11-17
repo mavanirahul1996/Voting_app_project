@@ -154,11 +154,30 @@ This ensures the image is built for the desired platform.
 
 ---
 
+## Architecture at a glance
 
+```mermaid
+flowchart LR
+  V[Vote UI - Python / Flask] --> R[Redis queue]
+  R --> W[Worker - .NET]
+  W --> P[(PostgreSQL)]
+  P --> O[Results UI - Node.js / Express]
+```
 
-instance_b_private_ip = "10.0.5.244"
-instance_c_private_ip = "10.0.5.146"
-private_subnet_id = "subnet-073b5457fcca7cebb"
-public_ip = "54.236.240.238"
-public_subnet_id = "subnet-06553008e242d20c1"
-vpc_id = "vpc-05ce89ae3dac3115c"
+## DevOps skills demonstrated
+
+- Multi-service application design and service-to-service communication.
+- Docker images for the application components.
+- Docker Compose for local orchestration.
+- Redis as a queue and PostgreSQL as persistent storage.
+
+## Deployment and security note
+
+This repository includes learning-lab material. Do not store live AWS IP addresses, VPC IDs, subnet IDs, credentials, or other environment-specific infrastructure values in this README. Check the actual deployment manifests and cloud account before describing a cloud deployment as active.
+
+## Suggested next improvements
+
+- Add Kubernetes manifests or Helm charts if deploying this stack to Kubernetes.
+- Add readiness and liveness probes.
+- Add automated tests and a CI workflow.
+- Add image vulnerability scanning to the build pipeline.
